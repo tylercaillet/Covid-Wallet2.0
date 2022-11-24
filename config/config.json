@@ -1,0 +1,20 @@
+{
+  "development": {
+
+    "database": "covidWallet2.0_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+
+    "database": "covidWallet2.0_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+
+    "database": "covidWallet2.0_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
