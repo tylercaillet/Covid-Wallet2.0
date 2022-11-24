@@ -1,15 +1,12 @@
 const Router = require('express').Router()
-const controller = require('../controllers/VinylController')
+const controller = require('../controllers/DocumentController')
 
 
-Router.get('/',controller.GetAllVinyls)
-Router.get('/:vinyl_id',controller.GetVinylDetails)
-Router.get('/listings/:user_id',controller.GetUserVinyls)
-Router.get('/status/sell',controller.GetSelling)
-Router.get('/status/trade',controller.GetTrading)
-Router.get('/status/wanted',controller.GetWanted)
-Router.post('/create/:user_id',controller.CreateVinyl)
-Router.put('/:vinyl_id',controller.UpdateVinyl)
-Router.delete('/:vinyl_id',controller.DeleteVinyl)
-// Implement these routes
+Router.get('/',controller.GetAllDocuments)
+Router.get('/:document_id',controller.GetDocumentDetails)
+Router.get('/listings/:user_id',controller.GetUserDocuments)
+Router.post('/create/:user_id',controller.CreateDocument)
+Router.put('/:document_id',controller.UpdateDocument)
+Router.delete('/:document_id',controller.DeleteDocument)
+
 module.exports = Router

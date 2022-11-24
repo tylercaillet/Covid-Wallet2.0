@@ -9,7 +9,7 @@ const GetUsersDocument = async (req, res) => {
 
         include:[
           {
-            model:Document,
+            model:Documents,
             as:'card',
             through:{attributes:[]}
           }
@@ -28,7 +28,7 @@ const GetUsersDocument = async (req, res) => {
 const GetUsersDocumentDetails=async(req,res)=>{
   try{
     const usersDocument=await UsersDocument.findByPk(req.params.userDocument_id) 
-    res.send(userDocument)
+    res.send(usersDocument)
   } catch (error){
     throw error
   }
@@ -52,7 +52,7 @@ const AddToUsersDocuments = async (req, res) => {
       owner_id,
       ...req.body
     }
-    let newEntry = await usersDocument.create(body)
+    let newEntry = await UsersDocument.create(body)
     res.send(newEntry);
   } catch (error) {
     throw error;
@@ -63,7 +63,7 @@ const DeleteFromUsersDocuments = async (req, res) => {
   try {
     let ownerId= parseInt(req.params.owner_id);
     let documentId = parseInt(req.params.document_id);
-    await usersDocument.destroy({where:{owner_id:ownerId,document_id:documentId}})
+    await UsersDocument.destroy({where:{owner_id:ownerId,document_id:documentId}})
     res.send({message:`Deleted document id ${documentId} from user ${ownerId}'s users documents`})
   } catch (error) {
     throw error;
