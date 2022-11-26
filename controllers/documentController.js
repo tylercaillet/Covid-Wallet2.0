@@ -1,4 +1,4 @@
-const {User, Vinyl}= require('../models')
+const {User, Documents}= require('../models')
 
 const GetAllDocuments = async (req, res) => {
     try {
